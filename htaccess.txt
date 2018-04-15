@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING} account/mail/%23value [NC,OR]
+RewriteCond %{QUERY_STRING} account/mail/#value [NC,OR]
+RewriteCond %{QUERY_STRING} timezone/timezone/%23value [NC,OR]
+RewriteCond %{QUERY_STRING} timezone/timezone/#value [NC]
+RewriteRule .* - [L]
