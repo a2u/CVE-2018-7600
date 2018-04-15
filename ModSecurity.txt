@@ -1,0 +1,3 @@
+# SPECIFIC: Block #submit #validate #process #pre_render #post_render #element_validate #after_build #value_callback parameters
+SecRule &ARGS_NAMES|&REQUEST_COOKIES_NAMES "@gt 0" "phase:2,log,chain,id:3295,t:none,block"
+SecRule ARGS_NAMES|REQUEST_COOKIES_NAMES "#(submit|validate|pre_render|post_render|element_validate|after_build|value_callback|process|access_callback|lazy_builder)|\[#(submit|validate|pre_render|post_render|element_validate|after_build|value_callback|process|access_callback|lazy_builder)" "t:none,t:utf8toUnicode,t:urlDecodeUni,t:removeNulls,t:cmdLine,t:removeWhitespace"
